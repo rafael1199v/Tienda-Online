@@ -1,0 +1,30 @@
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\bin\Debug\net7.0\Tienda.exe
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\bin\Debug\net7.0\Tienda.deps.json
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\bin\Debug\net7.0\Tienda.runtimeconfig.json
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\bin\Debug\net7.0\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\bin\Debug\net7.0\Tienda.pdb
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.AssemblyInfo.cs
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\refint\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.pdb
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\Tienda.genruntimeconfig.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda\obj\Debug\net7.0\ref\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\bin\Debug\net7.0\Tienda.exe
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\bin\Debug\net7.0\Tienda.deps.json
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\bin\Debug\net7.0\Tienda.runtimeconfig.json
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\bin\Debug\net7.0\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\bin\Debug\net7.0\Tienda.pdb
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.AssemblyInfo.cs
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\refint\Tienda.dll
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.pdb
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\Tienda.genruntimeconfig.cache
+C:\Users\ACER\Desktop\Universidad\Semestre 3\Programacion 2\Tienda 1.0\obj\Debug\net7.0\ref\Tienda.dll
