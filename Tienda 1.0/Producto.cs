@@ -32,6 +32,15 @@ public class Producto
         }
     }
 
+    public void ReducirStock(int cantidad){
+        if(stock  - cantidad < 0){
+            System.Console.WriteLine("No queda stock");
+        }
+        else{
+            stock -= cantidad;
+        }
+    }
+
     public void AumentarStock()
     {
         this.stock += 1;
@@ -91,5 +100,6 @@ public class Producto
     public virtual string GetDetalleAlgo(){
         return "Sin Descripcion\n";
     }
+
 
 }

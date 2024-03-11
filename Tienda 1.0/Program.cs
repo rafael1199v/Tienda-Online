@@ -20,17 +20,23 @@ nuevoCliente.CrearCarrito();
 nuevoCliente.InsertarCarrito(computador, 0);
 
 nuevoCliente.InsertarCarrito(yogurtPil, 0);
+nuevoCliente.InsertarCarritoPaquete(yogurtPil, 2, 0);
+nuevoCliente.InsertarCarritoPaquete(yogurtPil, 2, 0);
 
-nuevoCliente.CrearCarrito();
-nuevoCliente.InsertarCarrito(principito, 1);
-nuevoCliente.InsertarCarrito(computador, 1);
+// nuevoCliente.CrearCarrito();
+// nuevoCliente.InsertarCarrito(principito, 1);
+// nuevoCliente.InsertarCarrito(computador, 1);
 
 
-nuevoCliente.ImprimirCarritosDisponibles();
+//nuevoCliente.ImprimirCarritosDisponibles();
 
 nuevoCliente.Comprar(0);
+nuevoCliente.ImprimirFactura();
+// nuevoCliente.Comprar(0);
 // nuevoCliente.ImprimirFactura();
-// //nuevoCliente.Comprar(0);
-nuevoCliente.ImprimirCarritosDisponibles();
-// nuevoCliente.ImprimirFactura();
+
+
+
+//nuevoCliente.ImprimirCarritosDisponibles();
+
 
