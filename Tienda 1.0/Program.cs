@@ -1,36 +1,36 @@
-﻿using System.Runtime.ConstrainedExecution;
+﻿
 
 Categoria alimentos = new Categoria("Alimentos", 0.1);
 Categoria electronicos = new Categoria("Electronicos", 0.5);
 Categoria libros = new Categoria("Libros", 0.5);
 
 
-Producto computador = new Producto("Computador nuevo", 500.2, 1, electronicos);
+Electronico computador = new Electronico("Computador nuevo", 500.2, 1, electronicos, "Acer", "Windows 10", "Laptop");
 Producto yogurtPil = new Producto("Yogurt Pil", 100.1, 3, alimentos);
-Producto principito = new Producto("Principito", 50.23, 3, libros);
+Libro principito = new Libro("Principito", 50.23, 3, libros, "Antoine de Saint-Exupéry", "Novela", "06-04-1943");
+
+Paquete paqueteYogurt = new Paquete("Paquete Super Pil Yogurt x 12", yogurtPil, 12, 2);
 
 
 Cliente nuevoCliente = new Cliente("Rafael Vargas", "Av Los Andes", 13774782);
 Cliente cliente2 = new Cliente("Daniel Penharanda", "Segundo Anillo", 12345678);
 
-nuevoCliente.InsertarCarrito(computador);
-cliente2.InsertarCarrito(computador);
-nuevoCliente.InsertarCarrito(computador);
-nuevoCliente.InsertarCarrito(computador);
-nuevoCliente.InsertarCarrito(computador);
-nuevoCliente.InsertarCarrito(computador);
+nuevoCliente.CrearCarrito();
 
-nuevoCliente.ImprimirCarrito();
+nuevoCliente.InsertarCarrito(computador, 0);
+
+nuevoCliente.InsertarCarrito(yogurtPil, 0);
+
+nuevoCliente.CrearCarrito();
+nuevoCliente.InsertarCarrito(principito, 1);
+nuevoCliente.InsertarCarrito(computador, 1);
 
 
-// nuevoCliente.InsertarCarrito(yogurtPil);
-// nuevoCliente.InsertarCarrito(principito);
+nuevoCliente.ImprimirCarritosDisponibles();
 
-System.Console.WriteLine(computador.GetStock());
-
-System.Console.WriteLine("C");
-
-System.Console.WriteLine("C2");
-cliente2.Comprar();
-nuevoCliente.Comprar();
+nuevoCliente.Comprar(0);
+// nuevoCliente.ImprimirFactura();
+// //nuevoCliente.Comprar(0);
+nuevoCliente.ImprimirCarritosDisponibles();
+// nuevoCliente.ImprimirFactura();
 

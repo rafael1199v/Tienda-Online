@@ -26,16 +26,16 @@ public class Carrito
         
     }
 
-    public string GetDetalleProductos(List<Producto> carrito)
-    {
-        string detalles = "";
-        foreach(Producto actual in carrito){
-            detalles += $"Nombre Producto: {actual.GetNombreProducto()}\n";
-            detalles += $"Precio Producto: {actual.ConDescuento()}\n";
-        }
+    // public string GetDetalleProductos(List<Producto> carrito)
+    // {
+    //     string detalles = "";
+    //     foreach(Producto actual in carrito){
+    //         detalles += $"Nombre Producto: {actual.GetNombreProducto()}\n";
+    //         detalles += $"Precio Producto: {actual.ConDescuento()}\n";
+    //     }
         
-        return detalles;
-    }
+    //     return detalles;
+    // }
 
     public void QuitarElementoCarrito()
     {
@@ -66,6 +66,12 @@ public class Carrito
         {
             System.Console.WriteLine(this.carrito[i].GetNombreProducto());
         }
+    }
+
+
+    public List<Producto> GetCarrito()
+    {
+        return this.carrito;
     }
 
 }

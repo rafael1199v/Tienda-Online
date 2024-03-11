@@ -1,6 +1,3 @@
-
-using System.Reflection.Metadata.Ecma335;
-
 public class Producto
 {
     public String nombre;
@@ -73,6 +70,11 @@ public class Producto
         return this.precio * (1 - this.categoria.GetDescuento());
     }
 
+    public double GetPrecio()
+    {
+        return this.precio;
+    }
+
     private static void Validador(string nombre, double precio, int stock, Categoria categoria)
     {
         if(nombre == ""){
@@ -84,6 +86,10 @@ public class Producto
         else if(categoria == null){
             throw new ArgumentException("El producto no puede ser nulo");
         }
+    }
+
+    public virtual string GetDetalleAlgo(){
+        return "Sin Descripcion\n";
     }
 
 }
