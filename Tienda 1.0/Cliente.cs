@@ -5,8 +5,6 @@ public class Cliente
 {
     protected string nombre;
     protected string direccion;
-    //protected List<Producto> carrito;
-
     protected List<Carrito> carritos;
     protected List<Factura> facturas;
     protected int numCarnet;
@@ -74,9 +72,6 @@ public class Cliente
 
     public void Comprar(int indiceCarrito){
 
-       
-        double costoTotal = this.GetTotalCostoCarrito(indiceCarrito);
-        System.Console.WriteLine("AAAAA" + costoTotal);
 
         if(this.carritos[indiceCarrito].GetCarrito().Count == 0){
             System.Console.WriteLine("Usted no tiene nada en el carrito actual");
@@ -89,10 +84,6 @@ public class Cliente
                
                 if(!this.carritos[indiceCarrito].GetCarrito()[i].Item1.ValidaStock() || this.carritos[indiceCarrito].GetCarrito()[i].Item2 > this.carritos[indiceCarrito].GetCarrito()[i].Item1.GetStock())
                 {
-
-                    System.Console.WriteLine(costoTotal + " Probando antes de que sea boraddo");
-                    costoTotal -= this.carritos[indiceCarrito].GetCarrito()[i].Item1.ConDescuento() * this.carritos[indiceCarrito].GetCarrito()[i].Item2;
-                    System.Console.WriteLine(costoTotal + " Despues de que sea borrado");
                     this.carritos[indiceCarrito].GetCarrito().RemoveAt(i);
                     i--;
                 }
@@ -103,9 +94,6 @@ public class Cliente
 
 
             }
-
-
-            System.Console.WriteLine(costoTotal + " BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
 
             if(this.carritos[indiceCarrito].GetCarrito().Count == 0){
                 System.Console.WriteLine("Su carrito esta vacio");
@@ -190,18 +178,7 @@ public class Cliente
 
     public double GetTotalCostoCarrito(int indiceCarrito)
     {
-        double total = 0;
-        for(int i = 0; i < this.carritos[indiceCarrito].GetCarrito().Count; i++){
-            if(this.carritos[indiceCarrito].GetCarrito()[i].Item2 > 1)
-            {
-                total += this.carritos[indiceCarrito].GetCarrito()[i].Item1.ConDescuento() * this.carritos[indiceCarrito].GetCarrito()[i].Item2;
-            }
-            else{
-                total += this.carritos[indiceCarrito].GetCarrito()[i].Item1.ConDescuento();
-            }
-            
-        }
-
+        double total = this.carritos[indiceCarrito].GetTotalCostoCarrito();
         return total;
     }
 
