@@ -1,8 +1,8 @@
 public class Ropa : Producto
 {
-    string marca;
-    string talla;
-    string color;
+    protected string marca;
+    protected string talla;
+    protected string color;
 
 
     public Ropa()

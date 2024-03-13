@@ -1,8 +1,8 @@
 public class Electronico : Producto
 {
-    string marca;
-    string Os;
-    string tipo_electronico;
+    protected string marca;
+    protected string Os;
+    protected string tipo_electronico;
 
 
     public Electronico()

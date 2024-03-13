@@ -1,9 +1,9 @@
 
 public class Libro : Producto
 {
-    string autor;
-    string genero;
-    string fecha_publicacion;
+    protected string autor;
+    protected string genero;
+    protected string fecha_publicacion;
 
 
     public Libro()
