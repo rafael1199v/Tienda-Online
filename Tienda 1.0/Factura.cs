@@ -1,17 +1,17 @@
 
-using System.Collections.Concurrent;
-
 public class Factura
 {
     protected int nit;
     protected string? nombre;
     protected string detalle;
+    protected double costoTotal;
 
-    public Factura(int nit, string? nombre, string detalle)
+    public Factura(int nit, string? nombre, string detalle, double costoTotal)
     {
         this.nit = nit;
         this.nombre = nombre;
         this.detalle = detalle;
+        this.costoTotal = costoTotal;
     }
 
 
@@ -44,7 +44,6 @@ public class Factura
 
             detalles += nombre + " - Cantidad: "  + cantidad + " - Costo total: " + carrito.GetCarrito()[i].Item1.ConDescuento() * cantidad * carrito.GetCarrito()[i].Item2 + "\n";
             detalles += carrito.GetCarrito()[i].Item1.GetDetalleAlgo();
-            //cout<<"Producto: "<< nombre << "  Cantidad: " << cantidad << "  Costo total: " << ListProductos[i].precio * cantidad * (1 - ListProductos[i].GetDescuento());
         }
 
         detalles += "Costo Total = " + Convert.ToString(Math.Round(precioTotal, 3));

@@ -1,6 +1,4 @@
 
-using System.Runtime.ConstrainedExecution;
-
 public class Cliente
 {
     protected string nombre;
@@ -116,8 +114,9 @@ public class Cliente
             
             System.Console.WriteLine("Introduce el NIT: ");
             int nit = Convert.ToInt32(System.Console.ReadLine());
+            double costoTotal = this.carritos[indiceCarrito].GetTotalCostoCarrito();
 
-            Factura fac = new Factura(nit, nombreFactura, detalle);
+            Factura fac = new Factura(nit, nombreFactura, detalle, costoTotal);
             facturas.Add(fac);
 
             this.carritos.RemoveAt(indiceCarrito);
@@ -125,21 +124,6 @@ public class Cliente
         
 
     }
-
-
-    // public string GetDetalleProductos(List<Producto> carrito)
-    // {
-    //     string detalles = "";
-    //     foreach(Producto actual in carrito){
-    //         detalles += $"Nombre Producto: {actual.GetNombreProducto()}\n";
-    //         detalles += $"Precio Producto: {actual.ConDescuento()}\n";
-    //     }
-        
-    //     return detalles;
-    // }
-
-
-    
 
     public void QuitarElementoCarrito()
     {
@@ -151,7 +135,6 @@ public class Cliente
         else{
             this.carritos.Last().GetCarrito().Last().Item1.AumentarStock();
             this.carritos.Last().GetCarrito().RemoveAt(this.carritos.Last().GetCarrito().Count - 1);
-            // this.carrito.RemoveAt(this.carrito.Count - 1);
         }
         
     }

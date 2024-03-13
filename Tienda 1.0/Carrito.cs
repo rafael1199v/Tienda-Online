@@ -26,19 +26,6 @@ public class Carrito
         
     }
 
-    // public string GetDetalleProductos(List<Producto> carrito)
-    // {
-    //     string detalles = "";
-    //     foreach(Producto actual in carrito){
-    //         detalles += $"Nombre Producto: {actual.GetNombreProducto()}\n";
-    //         detalles += $"Precio Producto: {actual.ConDescuento()}\n";
-    //     }
-        
-    //     return detalles;
-    // }
-
-
-
     public void QuitarElementoCarrito()
     {
 
@@ -59,7 +46,7 @@ public class Carrito
         for(int i = 0; i < this.carrito.Count; i++){
             if(this.carrito[i].Item2 > 1)
             {
-                total += this.carrito[i].Item1.ConDescuento() * this.carrito[i].Item2;
+                total += this.carrito[i].Item1.ConDescuento() * 0.1 * this.carrito[i].Item2;
             }
             else{
                 total += this.carrito[i].Item1.ConDescuento();

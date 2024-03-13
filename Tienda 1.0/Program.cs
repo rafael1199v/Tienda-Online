@@ -7,7 +7,7 @@ Categoria libros = new Categoria("Libros", 0.5);
 
 Electronico computador = new Electronico("Computador nuevo", 500.2, 1, electronicos, "Acer", "Windows 10", "Laptop");
 Producto yogurtPil = new Producto("Yogurt Pil", 100.1, 3, alimentos);
-Libro principito = new Libro("Principito", 50.23, 3, libros, "Antoine de Saint-Exupéry", "Novela", "06-04-1943");
+Libro principito = new Libro("Principito", 50.23, 12, libros, "Antoine de Saint-Exupéry", "Novela", "06-04-1943");
 
 Paquete paqueteYogurt = new Paquete("Paquete Super Pil Yogurt x 12", yogurtPil, 12, 2);
 
@@ -22,6 +22,8 @@ nuevoCliente.InsertarCarrito(computador, 0);
 nuevoCliente.InsertarCarrito(yogurtPil, 0);
 nuevoCliente.InsertarCarritoPaquete(yogurtPil, 2, 0);
 nuevoCliente.InsertarCarritoPaquete(yogurtPil, 2, 0);
+nuevoCliente.InsertarCarritoPaquete(principito, 6, 0);
+
 
 // nuevoCliente.CrearCarrito();
 // nuevoCliente.InsertarCarrito(principito, 1);
