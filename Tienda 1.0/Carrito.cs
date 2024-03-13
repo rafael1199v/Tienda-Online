@@ -55,8 +55,6 @@ public class Carrito
         }
 
 
-        System.Console.WriteLine("El total es " + total);
-
         return total;
     }
 
