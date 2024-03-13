@@ -21,7 +21,7 @@ public class Libro : Producto
     }
 
 
-    public override string GetDetalleAlgo()
+    public override string GetDetalleProductos()
     {
 
         string libroDetalle = "";

@@ -40,10 +40,15 @@ public class Factura
             if(carrito.EsPaquete(i))
             {
                 detalles += "Paquete: ";
+                detalles += nombre + " - Cantidad: "  + cantidad + " - Costo total: " + carrito.GetCarrito()[i].Item1.ConDescuento() * cantidad * carrito.GetCarrito()[i].Item2 * 0.9 + "\n";
+            }
+            else
+            {
+                detalles += nombre + " - Cantidad: "  + cantidad + " - Costo total: " + carrito.GetCarrito()[i].Item1.ConDescuento() * cantidad * carrito.GetCarrito()[i].Item2 + "\n";
             }
 
-            detalles += nombre + " - Cantidad: "  + cantidad + " - Costo total: " + carrito.GetCarrito()[i].Item1.ConDescuento() * cantidad * carrito.GetCarrito()[i].Item2 + "\n";
-            detalles += carrito.GetCarrito()[i].Item1.GetDetalleAlgo();
+            
+            detalles += carrito.GetCarrito()[i].Item1.GetDetalleProductos();
         }
 
         detalles += "Costo Total = " + Convert.ToString(Math.Round(precioTotal, 3));

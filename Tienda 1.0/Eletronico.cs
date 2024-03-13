@@ -20,7 +20,7 @@ public class Electronico : Producto
     }
 
 
-    public override string GetDetalleAlgo()
+    public override string GetDetalleProductos()
     {
 
         string electronicoDetalle = "";

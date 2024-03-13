@@ -46,13 +46,16 @@ public class Carrito
         for(int i = 0; i < this.carrito.Count; i++){
             if(this.carrito[i].Item2 > 1)
             {
-                total += this.carrito[i].Item1.ConDescuento() * 0.1 * this.carrito[i].Item2;
+                total += this.carrito[i].Item1.ConDescuento()  * this.carrito[i].Item2  * 0.9;
             }
             else{
                 total += this.carrito[i].Item1.ConDescuento();
             }
             
         }
+
+
+        System.Console.WriteLine("El total es " + total);
 
         return total;
     }

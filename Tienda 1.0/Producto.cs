@@ -97,7 +97,7 @@ public class Producto
         }
     }
 
-    public virtual string GetDetalleAlgo(){
+    public virtual string GetDetalleProductos(){
         return "Sin Descripcion\n";
     }
 
