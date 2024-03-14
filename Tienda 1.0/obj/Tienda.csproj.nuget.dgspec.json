@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj": {}
+    "C:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj": {}
   },
   "projects": {
-    "c:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj": {
+    "C:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj",
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj",
         "projectName": "Tienda",
-        "projectPath": "c:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\Tienda.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\obj\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\DataBaseUcb\\Tienda-Online\\Tienda 1.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

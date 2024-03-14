@@ -149,9 +149,7 @@ public class Cliente
 
             for(int i = 0; i < this.carritos[indiceCarrito].GetCarrito().Count; i++){
                 if(this.carritos[indiceCarrito].GetCarrito()[i].Item1 == producto){
-                    // this.carritos[indiceCarrito].GetCarrito()[i].AumentarStock();
                     (this.carritos[indiceCarrito].GetCarrito()).RemoveAt(i);
-                    // this.carrito.RemoveAt(i);
                     break;
                 }
             }
