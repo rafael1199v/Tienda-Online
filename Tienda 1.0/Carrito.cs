@@ -1,10 +1,10 @@
 
 public class Carrito
 {
-    protected List<Producto> carrito;
+    protected List<(Producto, int)> carrito;
     public Carrito()
     {
-        carrito = new List<Producto>();
+        carrito = new List<(Producto, int)>();
     }
 
     public void QuitarElementoCarrito(Producto producto)
@@ -16,8 +16,8 @@ public class Carrito
         else{
 
             for(int i = 0; i < this.carrito.Count; i++){
-                if(this.carrito[i] == producto){
-                    this.carrito[i].AumentarStock();
+                if(this.carrito[i].Item1 == producto){
+                    this.carrito[i].Item1.AumentarStock();
                     this.carrito.RemoveAt(i);
                     break;
                 }
@@ -26,17 +26,6 @@ public class Carrito
         
     }
 
-    // public string GetDetalleProductos(List<Producto> carrito)
-    // {
-    //     string detalles = "";
-    //     foreach(Producto actual in carrito){
-    //         detalles += $"Nombre Producto: {actual.GetNombreProducto()}\n";
-    //         detalles += $"Precio Producto: {actual.ConDescuento()}\n";
-    //     }
-        
-    //     return detalles;
-    // }
-
     public void QuitarElementoCarrito()
     {
 
@@ -44,34 +33,56 @@ public class Carrito
             System.Console.WriteLine("El carrito ya esta vacio");
         }
         else{
-            this.carrito.Last().AumentarStock();
+            this.carrito.Last().Item1.AumentarStock();
             this.carrito.RemoveAt(this.carrito.Count - 1);
         }
         
     }
 
-    public double GetTotalCosto()
+
+    public double GetTotalCostoCarrito()
     {
         double total = 0;
         for(int i = 0; i < this.carrito.Count; i++){
-            total += this.carrito[i].ConDescuento();
+            if(this.carrito[i].Item2 > 1)
+            {
+                total += this.carrito[i].Item1.ConDescuento()  * this.carrito[i].Item2  * 0.9;
+            }
+            else{
+                total += this.carrito[i].Item1.ConDescuento();
+            }
+            
         }
+
 
         return total;
     }
+
 
     public void ImprimirCarrito()
     {
         for(int i = 0; i < this.carrito.Count; i++)
         {
-            System.Console.WriteLine(this.carrito[i].GetNombreProducto());
+            System.Console.WriteLine(this.carrito[i].Item1.GetNombreProducto());
         }
     }
 
 
-    public List<Producto> GetCarrito()
+    public List<(Producto, int)> GetCarrito()
     {
         return this.carrito;
+    }
+
+    public bool EsPaquete(int indiceProducto)
+    {
+        if(this.carrito[indiceProducto].Item2 > 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

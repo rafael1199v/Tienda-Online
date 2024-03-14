@@ -3,8 +3,6 @@ public class Cliente
 {
     protected string nombre;
     protected string direccion;
-    //protected List<Producto> carrito;
-
     protected List<Carrito> carritos;
     protected List<Factura> facturas;
     protected int numCarnet;
@@ -53,8 +51,8 @@ public class Cliente
 
             for(int j = 0; j < this.carritos[i].GetCarrito().Count; j++)
             {
-                System.Console.Write(this.carritos[i].GetCarrito()[j].GetNombreProducto() + " - ");
-                System.Console.WriteLine(this.carritos[i].GetCarrito()[j].ConDescuento());
+                System.Console.Write(this.carritos[i].GetCarrito()[j].Item1.GetNombreProducto() + " - ");
+                System.Console.WriteLine(this.carritos[i].GetCarrito()[j].Item1.ConDescuento());
             }
         }
     }
@@ -65,15 +63,13 @@ public class Cliente
             System.Console.WriteLine("No queda stock de producto");
         }
         else{
-            this.carritos[indiceCarrito].GetCarrito().Add(nuevo);
+            this.carritos[indiceCarrito].GetCarrito().Add((nuevo, 1));
         }   
     }
 
 
     public void Comprar(int indiceCarrito){
 
-       
-        double costoTotal = this.GetTotalCostoCarrito(indiceCarrito);
 
         if(this.carritos[indiceCarrito].GetCarrito().Count == 0){
             System.Console.WriteLine("Usted no tiene nada en el carrito actual");
@@ -82,13 +78,16 @@ public class Cliente
 
             for(int i = 0; i < this.carritos[indiceCarrito].GetCarrito().Count; i++){
 
-                if(!this.carritos[indiceCarrito].GetCarrito()[i].ValidaStock()){
-                    costoTotal -= this.carritos[indiceCarrito].GetCarrito()[i].ConDescuento();
+
+               
+                if(!this.carritos[indiceCarrito].GetCarrito()[i].Item1.ValidaStock() || this.carritos[indiceCarrito].GetCarrito()[i].Item2 > this.carritos[indiceCarrito].GetCarrito()[i].Item1.GetStock())
+                {
                     this.carritos[indiceCarrito].GetCarrito().RemoveAt(i);
                     i--;
                 }
-                else{
-                    this.carritos[indiceCarrito].GetCarrito()[i].ReducirStock();
+                else
+                {
+                    this.carritos[indiceCarrito].GetCarrito()[i].Item1.ReducirStock(this.carritos[indiceCarrito].GetCarrito()[i].Item2);
                 }
 
 
@@ -115,8 +114,9 @@ public class Cliente
             
             System.Console.WriteLine("Introduce el NIT: ");
             int nit = Convert.ToInt32(System.Console.ReadLine());
+            double costoTotal = this.carritos[indiceCarrito].GetTotalCostoCarrito();
 
-            Factura fac = new Factura(nit, nombreFactura, detalle);
+            Factura fac = new Factura(nit, nombreFactura, detalle, costoTotal);
             facturas.Add(fac);
 
             this.carritos.RemoveAt(indiceCarrito);
@@ -124,21 +124,6 @@ public class Cliente
         
 
     }
-
-
-    // public string GetDetalleProductos(List<Producto> carrito)
-    // {
-    //     string detalles = "";
-    //     foreach(Producto actual in carrito){
-    //         detalles += $"Nombre Producto: {actual.GetNombreProducto()}\n";
-    //         detalles += $"Precio Producto: {actual.ConDescuento()}\n";
-    //     }
-        
-    //     return detalles;
-    // }
-
-
-    
 
     public void QuitarElementoCarrito()
     {
@@ -148,9 +133,8 @@ public class Cliente
         }
 
         else{
-            this.carritos.Last().GetCarrito().Last().AumentarStock();
+            this.carritos.Last().GetCarrito().Last().Item1.AumentarStock();
             this.carritos.Last().GetCarrito().RemoveAt(this.carritos.Last().GetCarrito().Count - 1);
-            // this.carrito.RemoveAt(this.carrito.Count - 1);
         }
         
     }
@@ -164,10 +148,8 @@ public class Cliente
         else{
 
             for(int i = 0; i < this.carritos[indiceCarrito].GetCarrito().Count; i++){
-                if(this.carritos[indiceCarrito].GetCarrito()[i] == producto){
-                    // this.carritos[indiceCarrito].GetCarrito()[i].AumentarStock();
+                if(this.carritos[indiceCarrito].GetCarrito()[i].Item1 == producto){
                     (this.carritos[indiceCarrito].GetCarrito()).RemoveAt(i);
-                    // this.carrito.RemoveAt(i);
                     break;
                 }
             }
@@ -177,11 +159,7 @@ public class Cliente
 
     public double GetTotalCostoCarrito(int indiceCarrito)
     {
-        double total = 0;
-        for(int i = 0; i < this.carritos[indiceCarrito].GetCarrito().Count; i++){
-            total += this.carritos[indiceCarrito].GetCarrito()[i].ConDescuento();
-        }
-
+        double total = this.carritos[indiceCarrito].GetTotalCostoCarrito();
         return total;
     }
 
@@ -190,7 +168,7 @@ public class Cliente
     {
         for(int i = 0; i < this.carritos[indiceCarrito].GetCarrito().Count; i++)
         {
-            System.Console.WriteLine(this.carritos[indiceCarrito].GetCarrito()[i].GetNombreProducto());
+            System.Console.WriteLine(this.carritos[indiceCarrito].GetCarrito()[i].Item1.GetNombreProducto());
         }
     }
 
@@ -199,5 +177,17 @@ public class Cliente
     {
         this.carritos.Add(new Carrito());
     }
-    
+
+    public void InsertarCarritoPaquete(Producto producto, int cantidad, int indiceCarrito)
+    {
+        if(producto.GetStock() <= 0 || producto.GetStock() < cantidad)
+        {
+            System.Console.WriteLine("La cantidad para el paquete no esta disponible");
+        }
+        else
+        {
+            this.carritos[indiceCarrito].GetCarrito().Add((producto, cantidad));
+        }
+    }
+
 }

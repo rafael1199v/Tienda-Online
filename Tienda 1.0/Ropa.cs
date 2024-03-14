@@ -1,8 +1,8 @@
 public class Ropa : Producto
 {
-    string marca;
-    string talla;
-    string color;
+    protected string marca;
+    protected string talla;
+    protected string color;
 
 
     public Ropa()
@@ -20,7 +20,7 @@ public class Ropa : Producto
     }
 
 
-    public override string GetDetalleAlgo()
+    public override string GetDetalleProductos()
     {
 
         string RopaDetalle = "";
